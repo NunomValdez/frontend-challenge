@@ -47,11 +47,10 @@ const handleCheckbox = (updatedItem: any) => {
 const handleAddRowButton = () => {
   const newListItem = {
     id: Date.now().toString(), // Unique ID, e.g., using the current timestamp
-    voice: 'Title', // Default value
-    text: 'Write here', // Default value
-    checked: false // Default value
+    voice: 'Voice Title',
+    text: 'Write here',
+    checked: false
   }
-
   requestStore.addNewItem(newListItem)
 }
 </script>
