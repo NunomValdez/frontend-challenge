@@ -40,7 +40,6 @@ const handleUpdateItem = (item: any) => {
 }
 
 const handleCheckbox = (updatedItem: any) => {
-  console.log(updatedItem, ' check')
   requestStore.updateListItem(updatedItem)
 }
 

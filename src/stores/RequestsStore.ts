@@ -31,7 +31,11 @@ export const useRequestStore = defineStore('RequestsStore', {
     },
     async uploadData() {
       try {
-        const dataToBeSent = [...this.data]
+        const dataToBeSent = [
+          ...this.data.map((item) => {
+            return (item = { id: item.id, voice: item.voice, text: item.text })
+          })
+        ]
         const sentData = await axios.post(
           'https://run.mocky.io/v3/ebac0b77-a220-46d3-963c-ae8881c7e4c3',
           dataToBeSent
