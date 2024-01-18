@@ -48,11 +48,11 @@ function deleteItem(id: number) {
   emit('handleDelete', id)
 }
 
-function updateVoice(newVoice: HTMLElement) {
+function updateVoice(newVoice: string) {
   emit('updateItem', { ...item, voice: newVoice })
 }
 
-function updateText(newText: HTMLElement) {
+function updateText(newText: string) {
   emit('updateItem', { ...item, text: newText })
 }
 </script>

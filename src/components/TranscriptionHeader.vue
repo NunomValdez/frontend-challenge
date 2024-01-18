@@ -34,6 +34,7 @@ const handleUploadData = () => {
   background-color: white;
   padding: 1% 10%;
   border-bottom: 2px solid rgba(128, 128, 128, 0.159);
+  margin-bottom: 30px;
 }
 
 .title {

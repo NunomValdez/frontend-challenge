@@ -69,14 +69,15 @@ const handleAddRowButton = () => {
 .add-row-btn {
   display: flex;
   justify-content: center;
-  margin: 30px;
+  margin: 50px;
+  margin-top: 30px;
   button {
     border: none;
     background-color: transparent;
   }
 }
 .list-container {
-  padding: 0 50px;
-  margin: 30px;
+  padding: 0 40px;
+  margin: 0 70px;
 }
 </style>
