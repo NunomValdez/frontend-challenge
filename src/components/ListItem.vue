@@ -44,7 +44,6 @@ function handleCheckbox(newCheckedValue: any) {
   emit('updateCheckbox', { ...item, checked: newCheckedValue })
 }
 
-// method to emit the delete event
 function deleteItem(id: number) {
   emit('handleDelete', id)
 }
@@ -65,12 +64,10 @@ function updateText(newText: HTMLElement) {
   background-color: white;
   padding: 20px;
   margin: 2px;
-  // border-bottom: 2px solid #63676e23;
   .custom-checkbox {
     grid-column: 1 / 2;
   }
 
-  // Item content styling
   .item-content {
     grid-column: 2 / 7;
     flex-direction: column;
