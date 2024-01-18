@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+// Color Variables
+$color-checkbox-purple: #859EFF;
+$color-item-title: #566074;
+$color-item-content: #778195;
+$color-app-title: #414C5E;
+
+// Font-Family Variables
+$font-family-montserrat: 'Montserrat', sans-serif;
+$font-family-open-sans: 'Open Sans', sans-serif;
+
+// Font-Weight Variables
+$font-weight-semibold: 600; // SemiBold for Montserrat
+$font-weight-regular: 400; // Regular for Open Sans
+$font-weight-medium: 500; // Medium for Montserrat
+
+// Font-Size Variables
+$font-size-item-title: 16px;
+$font-size-item-content: 16px;
+$font-size-app-title: 18px;
+
+
+.item-title {
+  font-family: $font-family-montserrat;
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-item-title;
+  color: $color-item-title;
+}
+
+.item-content {
+  font-family: $font-family-open-sans;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-item-content;
+  color: $color-item-content;
+}
+
+
+
+
+body {
+  .title {
+    font-family: $font-family-montserrat;
+    font-weight: $font-weight-medium;
+    font-size: $font-size-app-title;
+    color: $color-app-title;
+  }
+  background-color: #f5f5f5; 
+}
+
+#app {
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  max-width: 1280px;
+  margin: 0 auto;
+  font-weight: 400;
+  font-size: 16px;
+  color: $color-item-content;
+  width: 80%;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+}
