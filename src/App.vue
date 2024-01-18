@@ -10,6 +10,11 @@
           @updateCheckbox="handleCheckbox"
         />
       </div>
+      <div class="add-row-btn">
+        <button @click="handleAddRowButton">
+          <img src="../assets-for-challenge/add-row.svg" alt="" />
+        </button>
+      </div>
       <RouterView />
     </div>
   </div>
@@ -38,17 +43,38 @@ const handleCheckbox = (updatedItem: any) => {
   console.log(updatedItem, ' check')
   requestStore.updateListItem(updatedItem)
 }
+
+const handleAddRowButton = () => {
+  const newListItem = {
+    id: Date.now().toString(), // Unique ID, e.g., using the current timestamp
+    voice: 'Title', // Default value
+    text: 'Write here', // Default value
+    checked: false // Default value
+  }
+
+  requestStore.addNewItem(newListItem)
+}
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .app-container {
   display: flex;
+  min-width: 900px;
   width: 90%;
   margin-top: 20px;
   flex-direction: column;
   border: 2px solid rgba(197, 197, 197, 0.334);
   border-radius: 5px;
   box-shadow: 0px 0px 10px 0px rgba(128, 128, 128, 0.405);
+}
+.add-row-btn {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+  button {
+    border: none;
+    background-color: transparent;
+  }
 }
 .list-container {
   padding: 0 50px;

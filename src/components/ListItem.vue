@@ -5,7 +5,7 @@
       <div class="voice-image-container">
         <img src="../../assets-for-challenge/person.svg" alt="person image" class="image-item" />
         <div
-          class="voice-item"
+          class="item-title"
           contenteditable="true"
           @input="updateVoice($event.target?.innerText)"
         >
@@ -29,7 +29,7 @@
 <!-- this was on the container div:  @mouseover="hover = true" @mouseleave="hover = false" |||||| this was on the button tag: v-if="hover" || @input="updateVoice($event.target?.innerText)"-->
 
 <script setup lang="ts">
-// import { ref } from 'vue';
+import { defineProps, defineEmits } from 'vue'
 import CustomCheckbox from './CustomCheckbox.vue'
 
 // use `defineProps` to declare the props
@@ -51,12 +51,13 @@ function deleteItem(id: number) {
   emit('handleDelete', id)
 }
 
-function updateVoice(newVoice: any) {
+function updateVoice(newVoice: HTMLElement) {
   emit('updateItem', { ...item, voice: newVoice })
 }
 
-function updateText(newText: any) {
-  emit('updateItem', { ...item, text: newText })
+function updateText(newText: HTMLElement) {
+  emit('updateItem'//, { ...item, text: newText }
+  )
 }
 </script>
 <style scoped lang="scss">
@@ -78,12 +79,6 @@ function updateText(newText: any) {
     display: flex;
     flex-direction: column;
     margin-left: -30px; // Space between checkbox and content
-  }
-
-  .voice-item {
-    font-weight: bold;
-    color: #566074;
-    padding: 0 5px;
   }
 
   .text-container {
@@ -117,7 +112,7 @@ function updateText(newText: any) {
     }
   }
   .image-item {
-    width: 22px;
+    width: 25px;
     margin-right: 10px;
   }
 }
