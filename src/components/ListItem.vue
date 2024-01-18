@@ -26,8 +26,6 @@
   </div>
 </template>
 
-<!-- this was on the container div:  @mouseover="hover = true" @mouseleave="hover = false" |||||| this was on the button tag: v-if="hover" || @input="updateVoice($event.target?.innerText)"-->
-
 <script setup lang="ts">
 import { defineProps, defineEmits } from 'vue'
 import CustomCheckbox from './CustomCheckbox.vue'
@@ -56,8 +54,7 @@ function updateVoice(newVoice: HTMLElement) {
 }
 
 function updateText(newText: HTMLElement) {
-  emit('updateItem'//, { ...item, text: newText }
-  )
+  emit('updateItem', { ...item, text: newText })
 }
 </script>
 <style scoped lang="scss">
@@ -75,10 +72,9 @@ function updateText(newText: HTMLElement) {
 
   // Item content styling
   .item-content {
-    grid-column: 2 / 7; // Occupy the next four fractions
-    display: flex;
+    grid-column: 2 / 7;
     flex-direction: column;
-    margin-left: -30px; // Space between checkbox and content
+    margin-left: -30px;
   }
 
   .text-container {
@@ -97,11 +93,11 @@ function updateText(newText: HTMLElement) {
     background-color: transparent;
     border: none;
     cursor: pointer;
-    grid-column: 8 / 9; // Occupy the last fraction
+    grid-column: 8 / 9;
     justify-self: end;
     align-self: start;
     img {
-      width: 16px; // Adjust as needed
+      width: 16px;
     }
   }
 
@@ -117,42 +113,3 @@ function updateText(newText: HTMLElement) {
   }
 }
 </style>
-
-<!-- <style scoped lang="scss">
-/* Your styles here */
-
-.item-content{
-  // display: grid;
-min-width: 80%;
-}
-.list-item{
-  display: flex;
-  /* margin-top:10px;
-  padding: 10px; */
-  flex-direction: row;
-  justify-content: space-between;
-    .delete-btn {
-      display: none;
-      width: 100%;
-      height: 100%;
-      background-color: transparent;
-      justify-self: flex-end;
-      border: none;
-  }
-    &:hover{
-    .delete-btn{
-      display: flex;
-      justify-self: flex-end;
-  }
-}
-}
-.list-container{
-  background-color: red;
-}
-
-
-.text-container{
-  display: flex;
-  flex-direction: column;
-}
-</style> -->

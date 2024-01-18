@@ -63,12 +63,9 @@ function toggleCheckbox() {
   display: none;
 }
 
-/* Show the checkmark when checked */
 .custom-checkbox input:checked ~ .checkmark:after {
   display: block;
 }
-
-/* Style the checkmark/indicator */
 .custom-checkbox .checkmark:after {
   left: 5px;
   top: 0px;
