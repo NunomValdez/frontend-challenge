@@ -2,10 +2,10 @@
   <header class="header">
     <h1 class="title">Transcriptions</h1>
     <div class="buttons">
-      <button @click="handleUploadData">
+      <button @click="handleUploadData" data-cy="upload-data-btn">
         <img src="../../assets-for-challenge/upload.svg" alt="Upload Data" />
       </button>
-      <button @click="onGetDataClick">
+      <button @click="onGetDataClick" data-cy="get-data-btn">
         <img src="../../assets-for-challenge/fetch-document@1x.png" alt="Get Data" />
       </button>
     </div>

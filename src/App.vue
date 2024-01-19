@@ -2,7 +2,7 @@
   <div class="app-container">
     <TranscriptionHeader @postData="handleUploadData" />
     <div class="list-container">
-      <div v-for="item in requestStore.data" :key="item.id">
+      <div v-for="item in requestStore.data" :key="item.id" data-cy="list-item">
         <ListItem
           :item="item"
           @handleDelete="onHandleDelete"
@@ -11,7 +11,7 @@
         />
       </div>
       <div class="add-row-btn">
-        <button @click="handleAddRowButton">
+        <button @click="handleAddRowButton" data-cy="add-row-btn">
           <img src="../assets-for-challenge/add-row.svg" alt="" />
         </button>
       </div>

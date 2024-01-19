@@ -20,7 +20,7 @@
         <div>{{ item.text }}</div>
       </div>
     </div>
-    <button @click="deleteItem(item.id)" class="delete-btn">
+    <button @click="deleteItem(item.id)" class="delete-btn" data-cy="delete-btn">
       <img src="../../assets-for-challenge/delete.svg" alt="delete button" />
     </button>
   </div>
