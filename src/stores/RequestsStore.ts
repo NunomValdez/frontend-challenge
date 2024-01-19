@@ -63,9 +63,9 @@ export const useRequestStore = defineStore('RequestsStore', {
       // }
       this.data.push(newItem)
     }
-  },
-  getters: {
-    // Example getter
-    itemCount: (state) => state.data.length
   }
+  // getters: {
+  //   // Example getter
+  //   itemCount: (state) => state.data.length
+  // }
 })
