@@ -22,7 +22,7 @@ export const useRequestStore = defineStore('RequestsStore', {
       // console.log('this is the type returned from the endpoint: ', typeof response.data, response)
 
       /*
-    NOTE: this endpoint is returning a string, even though visually looks like a JSON object, the type is string, that's why I had to mock the returned data instead of making the actual HTTP request. Sorry guys, I tried to trim the string, and modify the string and transform it into a JSON, but it was taking me too long to do it, so I decided to mock the data and leave this comment here explaining why I did this 
+    NOTE: this endpoint is returning a string, even though visually looks like a JSON object, the type is string, that's why I had to mock the returned data instead of making the actual HTTP request. Sorry guys, I tried to trim the string, and modify the string and transform it into a JSON by adding "" on the properties, but it was taking me too long to do it, so I decided to mock the data and leave this comment here explaining why I did it. 
     */
       this.data = mockedData.map((item) => ({
         ...item,
@@ -57,7 +57,6 @@ export const useRequestStore = defineStore('RequestsStore', {
     async addNewItem(newItem: any) {
       // try {
       //   const response = await axios.post("https://run.mocky.io/v3/ebac0b77-a220-46d3-963c-ae8881c7e4c3", newItem);
-      //   // Optionally, if the API returns the created item with an ID, add it to your data
       //   this.data.push(response.data);
       // } catch (error) {
       //   console.error('There was an error adding the new item:', error);
