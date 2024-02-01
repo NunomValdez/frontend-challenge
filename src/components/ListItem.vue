@@ -4,19 +4,13 @@
     <div class="item-content">
       <div class="voice-image-container">
         <img src="../../assets-for-challenge/person.svg" alt="person image" class="image-item" />
-        <div
-          class="item-title"
-          contenteditable="true"
-          @input="updateVoice($event.target?.innerText)"
-        >
+        <div class="item-title" contenteditable="true" @blur="updateVoice($event)">
           {{ item.voice }}
         </div>
       </div>
-      <div
-        class="text-container"
-        contenteditable="true"
-        @input="updateText($event.target?.innerText)"
-      >
+      <div class="text-container" contenteditable="true" @blur="updateText($event)">
+        <!-- this @input could be either @change or @blur, not @input, because I want to capture the event and change the element's inner text, and I could achieve that by doing so, this is not the proper way to do it, with the @input. This @input is used with input tags, not divs -->
+
         <div>{{ item.text }}</div>
       </div>
     </div>
@@ -48,13 +42,20 @@ function deleteItem(id: number) {
   emit('handleDelete', id)
 }
 
-function updateVoice(newVoice: string) {
+function updateVoice(event: Event) {
+  const target = event.target as HTMLElement // Ensuring the target is an HTMLElement
+  const newVoice = target.innerText // and now that we're sure is an html element, we can get the innerText
   emit('updateItem', { ...item, voice: newVoice })
 }
-
-function updateText(newText: string) {
-  emit('updateItem', { ...item, text: newText })
+function updateText(newText: Event) {
+  const target = newText.target as HTMLElement
+  const newSavedText = target.innerHTML
+  emit('updateItem', { ...item, text: newSavedText })
 }
+
+// function updateText(newText: string) {
+//   emit('updateItem', { ...item, text: newText })
+// }
 </script>
 <style scoped lang="scss">
 .list-item {
@@ -110,3 +111,21 @@ function updateText(newText: string) {
   }
 }
 </style>
+
+<!-- 
+  <template>
+  <div class="list-item">
+    <CustomCheckbox :model-value="item.checked" @update:model-value="handleCheckbox" />
+    <div class="item-content">
+      <div class="voice-image-container">
+        <img src="../../assets-for-challenge/person.svg" alt="person image" class="image-item" />
+        <input type="text" class="item-title" v-model="item.voice" />
+      </div>
+      <textarea class="text-container" v-model="item.text">{{ item.text }}</textarea>
+    </div>
+    <button @click="deleteItem(item.id)" class="delete-btn" data-cy="delete-btn">
+      <img src="../../assets-for-challenge/delete.svg" alt="delete button" />
+    </button>
+  </div>
+</template> 
+-->

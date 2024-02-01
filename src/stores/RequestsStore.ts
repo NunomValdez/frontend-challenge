@@ -33,7 +33,7 @@ export const useRequestStore = defineStore('RequestsStore', {
       try {
         const dataToBeSent = [
           ...this.data.map((item) => {
-            return (item = { id: item.id, voice: item.voice, text: item.text })
+            return { id: item.id, voice: item.voice, text: item.text }
           })
         ]
         const sentData = await axios.post(
@@ -55,12 +55,6 @@ export const useRequestStore = defineStore('RequestsStore', {
       this.data = this.data.filter((item) => item.id !== id)
     },
     async addNewItem(newItem: any) {
-      // try {
-      //   const response = await axios.post("https://run.mocky.io/v3/ebac0b77-a220-46d3-963c-ae8881c7e4c3", newItem);
-      //   this.data.push(response.data);
-      // } catch (error) {
-      //   console.error('There was an error adding the new item:', error);
-      // }
       this.data.push(newItem)
     }
   }

@@ -57,4 +57,3 @@ const handleUploadData = () => {
   background-color: #e1e1e3;
 }
 </style>
-@/stores/RequestsStore

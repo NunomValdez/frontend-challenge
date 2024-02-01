@@ -16,6 +16,10 @@
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
-    "allowJs": true
+    "allowJs": true,
+    "baseUrl": ".", // This must be set if "paths" is set.
+    "paths": {
+      "@/*": ["src/*"] // Assuming that "@" should point to your "src" folder.
+    },
   }
 }

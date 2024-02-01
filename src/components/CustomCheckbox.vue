@@ -64,6 +64,7 @@ function toggleCheckbox() {
 }
 
 .custom-checkbox input:checked ~ .checkmark:after {
+  //when an input inside .custom-checkbox is checked, this rule will apply the display: block; style to the :after pseudo-element of all .checkmark siblings that follow it
   display: block;
 }
 .custom-checkbox .checkmark:after {
